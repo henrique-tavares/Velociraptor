@@ -1,8 +1,9 @@
 import React from 'react';
 import { useFonts } from 'expo-font';
 import { Nunito_600SemiBold, Nunito_700Bold, Nunito_800ExtraBold } from '@expo-google-fonts/nunito';
+import { StatusBar } from 'react-native';
 
-import Landing from './src/pages/Landing';
+import Routes from './src/routes';
 
 export default function App() {
   const [ fontsLoaded ] = useFonts({
@@ -16,6 +17,9 @@ export default function App() {
   }
 
   return (
-    <Landing />
+    <>
+      <StatusBar backgroundColor="#303922" barStyle='light-content' />
+      <Routes />
+    </>
   );
 }
