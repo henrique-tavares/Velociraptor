@@ -11,7 +11,7 @@ const { Navigator, Screen } = createStackNavigator();
 export default function Routes() {
   return (
     <NavigationContainer>
-      <Navigator initialRouteName="Landing">
+      <Navigator initialRouteName="Landing" screenOptions={{ headerShown: false }}>
         <Screen
           name="Landing"
           component={ Landing }
