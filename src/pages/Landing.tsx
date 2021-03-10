@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, View, Image, SafeAreaView, StyleSheet, Button } from 'react-native';
+import { Text, View, Image, StyleSheet, ImageBackground } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 
 import DinoPlay from '../../assets/Play.png';
-import Graminha from '../../assets/Graminha.png';
+import Background from '../../assets/BackgroundHome.png';
 
 export default function Landing() {
 
@@ -12,19 +12,17 @@ export default function Landing() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.dinoPlayContainer}>
-        <TouchableOpacity 
-          onPress={() => navigation.navigate("Download")} 
+      <ImageBackground source={Background} style={styles.littleGrass}>
+        <View style={styles.dinoPlayContainer}>
+          <TouchableOpacity
+            onPress={() => navigation.reset({index: 0, routes: [{name: "Download"}]})} 
           >
             <Image source={DinoPlay} style={styles.dinoPlay}/>
-        </TouchableOpacity>
-        
-        <Text style={styles.dinoPlayLabel}>Aperte para iniciar</Text>
-      </View>
-
-      <View style={styles.littleGrassContainer}>
-        <Image style={styles.littleGrass} source={Graminha}/>
-      </View>
+          </TouchableOpacity>
+          
+          <Text style={styles.dinoPlayLabel}>Aperte para iniciar</Text>
+        </View>
+      </ImageBackground>
     </View>
   );
 }
@@ -32,31 +30,25 @@ export default function Landing() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   dinoPlayContainer: {
+    marginBottom: '50%',
     alignItems: 'center'
   },
   dinoPlay: {
-    marginTop: -30,
-    resizeMode: 'contain',
-    // backgroundColor: '#aaa'
+    resizeMode: 'contain'
   },
   dinoPlayLabel: {
-    marginTop: 10,
+    marginTop: '10%',
     color: "#B17F2A",
-    fontFamily: 'Nunito_700Bold',
+    fontFamily: 'Ubuntu_700Bold',
     fontSize: 26,
-  },
-  littleGrassContainer: {
-    height: '40%',
-    width: '100%'
   },
   littleGrass: {
     flex: 1,
-    height: undefined,
-    width: undefined,
+    width: '100%',
     resizeMode: 'cover',
+    justifyContent: 'center'
   }
 })
