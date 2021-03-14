@@ -1,9 +1,9 @@
-import React from 'react';
-import { useFonts } from 'expo-font';
-import { Ubuntu_300Light, Ubuntu_400Regular, Ubuntu_500Medium, Ubuntu_700Bold } from '@expo-google-fonts/ubuntu';
-import { StatusBar } from 'react-native';
+import React from "react";
+import { useFonts } from "expo-font";
+import { Ubuntu_300Light, Ubuntu_400Regular, Ubuntu_500Medium, Ubuntu_700Bold } from "@expo-google-fonts/ubuntu";
+import { StatusBar } from "react-native";
 
-import Routes from './src/routes';
+import Routes from "./src/routes";
 
 export default function App() {
   const [ fontsLoaded ] = useFonts({
@@ -19,7 +19,7 @@ export default function App() {
 
   return (
     <>
-      <StatusBar backgroundColor="#303922" barStyle='light-content' />
+      <StatusBar backgroundColor="#303922" barStyle="light-content" />
       <Routes />
     </>
   );
